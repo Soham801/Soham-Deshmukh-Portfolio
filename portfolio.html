@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soham Deshmukh — Mobile & AI/ML Engineer</title>
+<style>
+:root{--navy:#0f1f3d;--navy-mid:#1b3a6b;--blue:#2563eb;--teal:#0d9488;--purple:#7c3aed;--surface:#f8faff;--surface2:#eef2ff;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--white:#ffffff;--card-r:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--text);line-height:1.6;overflow-x:hidden;}
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.45;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 4px 30px rgba(15,31,61,0.08);}
+.nav-logo{font-weight:800;font-size:1.2rem;color:var(--navy-mid);display:flex;align-items:center;gap:6px;}
+.nav-dot{width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pdot 2s ease-in-out infinite;}
+@keyframes pdot{0%,100%{transform:scale(1);}50%{transform:scale(1.5);opacity:0.6;}}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.87rem;font-weight:500;color:var(--muted);transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--blue);border-radius:1px;transform:scaleX(0);transition:transform 0.2s;}
+.nav-links a:hover{color:var(--navy-mid);}
+.nav-links a:hover::after{transform:scaleX(1);}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;max-width:1200px;margin:0 auto;padding:7rem 2.5rem 4rem;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid #c7d2fe;color:#4338ca;font-size:0.78rem;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:1.5rem;animation:fsu 0.6s ease both;}
+.bp{width:7px;height:7px;background:#4338ca;border-radius:50%;animation:pdot 1.5s ease-in-out infinite;}
+.hero h1{font-size:clamp(2.4rem,4vw,3.6rem);font-weight:900;line-height:1.05;color:var(--navy);margin-bottom:0.3rem;animation:fsu 0.7s 0.1s ease both;}
+.hero h1 .ac{color:var(--blue);position:relative;}
+.hero h1 .ac::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:2px;animation:sil 0.8s 0.8s ease both;transform-origin:left;}
+@keyframes sil{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+.hero-sub{font-size:1.05rem;color:var(--muted);margin:1.4rem 0 2rem;max-width:480px;line-height:1.75;animation:fsu 0.7s 0.2s ease both;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;animation:fsu 0.7s 0.3s ease both;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--navy-mid);color:#fff;text-decoration:none;padding:13px 26px;border-radius:10px;font-weight:700;font-size:0.9rem;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 15px rgba(27,58,107,0.3);}
+.btn-p:hover{background:var(--navy);transform:translateY(-2px);box-shadow:0 8px 25px rgba(27,58,107,0.35);}
+.btn-s{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--border);color:var(--text);text-decoration:none;padding:13px 26px;border-radius:10px;font-weight:700;font-size:0.9rem;transition:all 0.2s;}
+.btn-s:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:2.5rem;border-top:1px solid var(--border);padding-top:2rem;animation:fsu 0.7s 0.4s ease both;}
+.sn{font-size:1.9rem;font-weight:900;color:var(--navy-mid);line-height:1;}
+.sl{font-size:0.76rem;color:var(--muted);margin-top:4px;}
+@keyframes fsu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+/* HERO RIGHT */
+.hero-right{display:flex;align-items:center;justify-content:center;position:relative;animation:fsu 0.8s 0.2s ease both;}
+.orb{position:absolute;border-radius:50%;z-index:0;}
+.orb1{width:90px;height:90px;background:rgba(37,99,235,0.07);top:8%;right:2%;animation:od 7s ease-in-out infinite;}
+.orb2{width:55px;height:55px;background:rgba(124,58,237,0.07);bottom:12%;left:3%;animation:od 9s 2s ease-in-out infinite;}
+.orb3{width:38px;height:38px;background:rgba(13,148,136,0.09);top:50%;right:-2%;animation:od 5.5s 1s ease-in-out infinite;}
+@keyframes od{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-18px) scale(1.08);}}
+.neural-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:430px;height:430px;z-index:1;}
+.phone-wrap{position:relative;z-index:2;}
+.phone{width:196px;height:394px;background:#0f1f3d;border-radius:36px;border:5px solid #1e3a6e;position:relative;box-shadow:0 32px 80px rgba(15,31,61,0.38),0 0 0 1px rgba(255,255,255,0.04);animation:pfl 4s ease-in-out infinite;}
+@keyframes pfl{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-16px) rotate(-2deg);}}
+.ph-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:58px;height:17px;background:#0a1628;border-radius:10px;z-index:3;}
+.ph-screen{position:absolute;top:26px;left:5px;right:5px;bottom:11px;background:#0d1117;border-radius:30px;overflow:hidden;}
+.ph-bar{background:#161b22;padding:6px 14px;display:flex;justify-content:space-between;align-items:center;}
+.ph-time{font-size:9px;color:#8b949e;font-weight:600;font-family:monospace;}
+.ph-icons{display:flex;gap:3px;}
+.ph-icons span{width:9px;height:9px;background:#374151;border-radius:2px;display:block;}
+.ph-body{padding:10px 11px;}
+.ph-hdr{font-size:7.5px;color:#60a5fa;font-weight:800;letter-spacing:1.2px;margin-bottom:8px;}
+.ph-card{background:#1a2744;border-radius:7px;padding:7px 9px;margin-bottom:5px;border:1px solid #1e3a6e;}
+.ph-ct{font-size:6.5px;color:#e2e8f0;font-weight:600;margin-bottom:2px;}
+.ph-cs{font-size:6px;color:#64748b;}
+.ph-btn{background:#2563eb;border-radius:6px;padding:5px;margin-top:7px;text-align:center;}
+.ph-btn span{font-size:6.5px;color:white;font-weight:800;}
+.fl-badge{position:absolute;bottom:-14px;right:-22px;background:white;border-radius:12px;padding:6px 11px;border:2px solid #e2e8f0;font-size:11px;font-weight:700;color:var(--blue);box-shadow:0 4px 14px rgba(0,0,0,0.1);animation:bb 3.5s 1s ease-in-out infinite;}
+.ai-badge{position:absolute;top:-14px;left:-30px;background:white;border-radius:12px;padding:6px 11px;border:2px solid #e2e8f0;font-size:11px;font-weight:700;color:var(--purple);box-shadow:0 4px 14px rgba(0,0,0,0.1);animation:bb 3.5s 0.5s ease-in-out infinite;}
+@keyframes bb{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+/* SECTIONS */
+section{padding:5.5rem 2.5rem;position:relative;z-index:1;}
+.container{max-width:1100px;margin:0 auto;}
+.slbl{font-size:0.73rem;font-weight:800;letter-spacing:2px;color:var(--blue);text-transform:uppercase;margin-bottom:0.5rem;}
+.stitle{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:900;color:var(--navy);margin-bottom:0.6rem;}
+.ssub{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.75;margin-bottom:3rem;}
+/* SCROLL REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rv.vis{opacity:1;transform:translateY(0);}
+.rvl{opacity:0;transform:translateX(-28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rvl.vis{opacity:1;transform:translateX(0);}
+.rvr{opacity:0;transform:translateX(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rvr.vis{opacity:1;transform:translateX(0);}
+.rvsc{opacity:0;transform:scale(0.93);transition:opacity 0.6s ease,transform 0.6s ease;}
+.rvsc.vis{opacity:1;transform:scale(1);}
+.stg>*{opacity:0;transform:translateY(22px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.stg.vis>*{opacity:1;transform:translateY(0);}
+.stg.vis>*:nth-child(1){transition-delay:0s;}.stg.vis>*:nth-child(2){transition-delay:0.1s;}.stg.vis>*:nth-child(3){transition-delay:0.2s;}.stg.vis>*:nth-child(4){transition-delay:0.3s;}.stg.vis>*:nth-child(5){transition-delay:0.4s;}
+/* ABOUT */
+.about-sec{background:var(--surface);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-text p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:0.97rem;}
+.about-text strong{color:var(--text);}
+.dcards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.dc{background:var(--white);border:1px solid var(--border);border-radius:var(--card-r);padding:1.4rem;border-top:3px solid var(--navy-mid);transition:transform 0.2s,box-shadow 0.2s;}
+.dc:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,31,61,0.08);}
+.dc.teal{border-top-color:var(--teal);}
+.dc.blue{border-top-color:var(--blue);}
+.dc.purple{border-top-color:var(--purple);}
+.di{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.8rem;font-size:18px;}
+.dc h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.dc p{font-size:0.79rem;color:var(--muted);line-height:1.5;}
+/* SKILLS */
+.sk-sec{background:var(--navy);}
+.sk-sec .stitle{color:#f1f5f9;}.sk-sec .ssub{color:#94a3b8;}.sk-sec .slbl{color:#60a5fa;}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;}
+.sg{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--card-r);padding:1.4rem;transition:background 0.2s,transform 0.2s;}
+.sg:hover{background:rgba(255,255,255,0.07);transform:translateY(-3px);}
+.sg-t{font-size:0.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.ai .sg-t{color:#a78bfa;}.mob .sg-t{color:#60a5fa;}.be .sg-t{color:#34d399;}.lang .sg-t{color:#fbbf24;}.tools .sg-t{color:#f87171;}
+.sp-list{display:flex;flex-wrap:wrap;gap:6px;}
+.sp{font-size:0.77rem;color:#cbd5e1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);padding:4px 10px;border-radius:100px;font-weight:500;transition:background 0.2s,color 0.2s;}
+.sp:hover{background:rgba(37,99,235,0.2);color:#93c5fd;}
+.bars{margin-top:3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 3rem;}
+.bi{}
+.bi-lbl{display:flex;justify-content:space-between;font-size:0.82rem;color:#94a3b8;margin-bottom:6px;}
+.bi-lbl span:last-child{color:#60a5fa;font-weight:700;}
+.bt{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;}
+.bf{height:100%;border-radius:3px;width:0%;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+.fb{background:linear-gradient(90deg,#2563eb,#60a5fa);}.fp{background:linear-gradient(90deg,#7c3aed,#a78bfa);}.ft{background:linear-gradient(90deg,#0d9488,#34d399);}.fa{background:linear-gradient(90deg,#d97706,#fbbf24);}
+/* PROJECTS */
+.fb-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2.5rem;}
+.fb-btn{background:var(--surface);border:1.5px solid var(--border);color:var(--muted);font-size:0.82rem;font-weight:700;padding:8px 18px;border-radius:100px;cursor:pointer;transition:all 0.2s;}
+.fb-btn:hover,.fb-btn.act{background:var(--navy-mid);border-color:var(--navy-mid);color:#fff;}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(316px,1fr));gap:1.4rem;}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:var(--card-r);overflow:hidden;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;display:flex;flex-direction:column;position:relative;}
+.pc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,0.03),transparent);opacity:0;transition:opacity 0.3s;}
+.pc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(37,99,235,0.1);border-color:#bfdbfe;}
+.pc:hover::before{opacity:1;}
+.pc.fb{border-top:3px solid var(--blue);}.pc.ft{border-top:3px solid var(--teal);}.pc.fp{border-top:3px solid var(--purple);}
+.ph2{padding:1.4rem 1.4rem 0;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
+.pi{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.pl{display:flex;gap:8px;}
+.ib{width:34px;height:34px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:15px;transition:all 0.2s;}
+.ib:hover{border-color:var(--blue);color:var(--blue);background:var(--surface2);}
+.pb{padding:1rem 1.4rem 1.4rem;flex:1;display:flex;flex-direction:column;}
+.pt{font-size:0.97rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+.pd{font-size:0.84rem;color:var(--muted);line-height:1.65;margin-bottom:1rem;flex:1;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;}
+.tg{font-size:0.71rem;font-weight:700;padding:3px 9px;border-radius:100px;}
+.tai{background:#ede9fe;color:#5b21b6;}.tmob{background:#dbeafe;color:#1e40af;}.tpy{background:#d1fae5;color:#065f46;}.tba{background:#fef3c7;color:#92400e;}.tred{background:#fee2e2;color:#991b1b;}
+/* HACKATHONS */
+.hk-sec{background:var(--surface);}
+.hk-list{display:flex;flex-direction:column;gap:1.4rem;}
+.hk{background:var(--white);border:1px solid var(--border);border-radius:var(--card-r);padding:1.6rem 2rem;display:flex;align-items:flex-start;gap:1.5rem;transition:transform 0.2s,box-shadow 0.2s;}
+.hk:hover{transform:translateX(4px);box-shadow:0 8px 30px rgba(15,31,61,0.07);}
+.hkb{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.hke{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.hkm{font-size:0.81rem;color:var(--muted);margin-bottom:0.5rem;}
+.hko{font-size:0.87rem;color:var(--text);line-height:1.65;}
+.hks{margin-left:auto;flex-shrink:0;text-align:center;background:var(--surface2);border:1px solid #c7d2fe;border-radius:10px;padding:0.9rem 1.3rem;}
+.hksn{font-size:1.4rem;font-weight:900;color:var(--navy-mid);}
+.hksl{font-size:0.69rem;color:#6366f1;font-weight:700;white-space:nowrap;}
+/* EXP */
+.ec{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--navy-mid);border-radius:var(--card-r);padding:1.8rem 2rem;margin-bottom:1.5rem;transition:transform 0.2s;}
+.ec:hover{transform:translateX(4px);}
+.eh{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;}
+.er{font-size:1.05rem;font-weight:700;color:var(--navy);}
+.eco{font-size:0.88rem;color:var(--blue);font-weight:600;margin-top:2px;}
+.ed{font-size:0.81rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+.ebl{list-style:none;}
+.ebl li{font-size:0.87rem;color:var(--muted);line-height:1.75;padding-left:1.2rem;position:relative;margin-bottom:4px;}
+.ebl li::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:0.72rem;top:3px;}
+.edcard{background:var(--white);border:1px solid var(--border);border-radius:var(--card-r);padding:1.6rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.edeg{font-size:1rem;font-weight:700;color:var(--navy);}
+.esch{font-size:0.86rem;color:var(--muted);margin-top:2px;}
+.eyr{margin-left:auto;font-size:0.81rem;color:var(--blue);font-weight:700;background:var(--surface2);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+/* CONTACT */
+.ct-sec{background:var(--navy);}
+.ct-sec .stitle{color:#f1f5f9;}.ct-sec .ssub{color:#94a3b8;}.ct-sec .slbl{color:#60a5fa;}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.cc{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:var(--card-r);padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:background 0.2s,transform 0.2s;margin-bottom:0.9rem;}
+.cc:hover{background:rgba(255,255,255,0.09);transform:translateX(4px);}
+.ci{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.clbl{font-size:0.72rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.cval{font-size:0.88rem;color:#e2e8f0;font-weight:500;}
+.avc{border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:2rem;background:rgba(255,255,255,0.04);}
+.avc p:first-child{font-size:1.1rem;font-weight:700;color:#f1f5f9;margin-bottom:0.8rem;line-height:1.45;}
+.avc p:last-of-type{font-size:0.88rem;color:#94a3b8;line-height:1.8;margin-bottom:1.4rem;}
+.av-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.avt{font-size:0.77rem;font-weight:700;padding:5px 13px;border-radius:100px;}
+.avbl{background:rgba(37,99,235,0.2);border:1px solid rgba(59,130,246,0.3);color:#93c5fd;}
+.avtl{background:rgba(13,148,136,0.2);border:1px solid rgba(20,184,166,0.3);color:#5eead4;}
+.avpu{background:rgba(124,58,237,0.2);border:1px solid rgba(139,92,246,0.3);color:#c4b5fd;}
+footer{background:#070f1f;padding:2rem;text-align:center;font-size:0.81rem;color:#475569;border-top:1px solid #1e293b;}
+footer span{color:#60a5fa;}
+/* RESPONSIVE */
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:5.5rem;}.hero-right{display:none;}.about-grid{grid-template-columns:1fr;}.ct-grid{grid-template-columns:1fr;}.hk{flex-direction:column;}.hks{margin-left:0;}.eh{flex-direction:column;gap:0.5rem;}.bars{grid-template-columns:1fr;}nav{padding:0 1.2rem;}.nav-links{gap:1.2rem;}}
+@media(max-width:600px){.dcards{grid-template-columns:1fr;}section{padding:4rem 1.5rem;}}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav id="mainNav">
+  <div class="nav-logo">SD<div class="nav-dot"></div></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge"><div class="bp"></div>Available for opportunities</div>
+    <h1>Soham<br><span class="ac">Deshmukh</span></h1>
+    <p class="hero-sub">Mobile App Developer &amp; AI/ML Engineer building intelligent, real-world applications — from Flutter at production scale to PyTorch-powered computer vision.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-p"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>View Projects</a>
+      <a href="https://github.com/Soham801" target="_blank" class="btn-s"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="sn">Top 32</div><div class="sl">of 5,000+ nationally</div></div>
+      <div><div class="sn">13+</div><div class="sl">projects shipped</div></div>
+      <div><div class="sn">&lt;24h</div><div class="sl">zero → demo, twice</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+    <div class="neural-wrap"><canvas id="neuralCanvas" width="430" height="430"></canvas></div>
+    <div class="phone-wrap">
+      <div class="ai-badge">🤖 AI/ML</div>
+      <div class="phone">
+        <div class="ph-notch"></div>
+        <div class="ph-screen">
+          <div class="ph-bar"><span class="ph-time">9:41</span><div class="ph-icons"><span></span><span></span><span></span></div></div>
+          <div class="ph-body">
+            <div class="ph-hdr">FLUTTER APPS</div>
+            <div class="ph-card"><div class="ph-ct">🎯 AI Cheat Detector</div><div class="ph-cs">Real-time · Computer Vision</div></div>
+            <div class="ph-card"><div class="ph-ct">🌾 Krushi Sahayak</div><div class="ph-cs">Farmer advisory · Django</div></div>
+            <div class="ph-card"><div class="ph-ct">💬 AI Chatbot</div><div class="ph-cs">Dialogflow · Firebase</div></div>
+            <div class="ph-btn"><span>View All Projects →</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="fl-badge">📱 Flutter Dev</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-sec">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text rvl">
+        <div class="slbl">About me</div>
+        <h2 class="stitle">Where mobile meets<br>machine intelligence</h2>
+        <p>I'm a <strong>Computer Science undergraduate</strong> at MGM University, Aurangabad, specializing in Flutter mobile development and Python/AI engineering. My work sits at the rare intersection of <strong>production mobile apps</strong> and <strong>AI/ML systems</strong>.</p>
+        <p>What sets me apart is my ability to build real, working products fast. I was selected <strong>Top 32 of 5,000+ teams</strong> at a national hackathon, and have shipped demo-ready prototypes under 24-hour pressure twice.</p>
+        <p>I've worked as a <strong>Flutter Developer Intern</strong> at MeMatdar Developers, building scalable mobile apps with Firebase, clean architecture, and real-time data pipelines in production environments.</p>
+        <div class="dcards stg">
+          <div class="dc blue"><div class="di" style="background:#dbeafe;">📱</div><h4>Mobile Engineering</h4><p>Flutter, Firebase, clean architecture, state management</p></div>
+          <div class="dc teal"><div class="di" style="background:#ccfbf1;">🤖</div><h4>AI / ML Systems</h4><p>PyTorch, OpenCV, computer vision, NLP pipelines</p></div>
+          <div class="dc"><div class="di" style="background:#fef3c7;">⚡</div><h4>Backend APIs</h4><p>FastAPI, Django, Flask, REST design, Supabase</p></div>
+          <div class="dc purple"><div class="di" style="background:#ede9fe;">🏆</div><h4>Rapid Prototyping</h4><p>2× zero to demo in under 24h, hackathon proven</p></div>
+        </div>
+      </div>
+      <!-- AI + Mobile SVG Illustration -->
+      <div class="rvr" style="display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 370 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:370px;height:auto;">
+          <!-- Background circuit lines -->
+          <line x1="30" y1="100" x2="80" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+          <line x1="80" y1="100" x2="80" y2="60" stroke="#e2e8f0" stroke-width="1"/>
+          <line x1="290" y1="100" x2="340" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+          <line x1="340" y1="100" x2="340" y2="60" stroke="#e2e8f0" stroke-width="1"/>
+          <circle cx="80" cy="60" r="4" fill="#c7d2fe"/>
+          <circle cx="340" cy="60" r="4" fill="#c7d2fe"/>
+
+          <!-- Brain (AI) -->
+          <ellipse cx="185" cy="140" rx="105" ry="95" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+          <!-- brain fold lines -->
+          <path d="M130 110 Q160 92 185 112 Q210 92 240 112" fill="none" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M112 140 Q145 124 175 144 Q205 124 240 144 Q262 130 272 144" fill="none" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M115 170 Q148 155 180 175 Q212 155 248 175" fill="none" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M128 198 Q160 184 188 204 Q218 184 248 204" fill="none" stroke="#a5b4fc" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="185" y1="50" x2="185" y2="232" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="4,3"/>
+          <!-- neurons -->
+          <circle cx="152" cy="122" r="5.5" fill="#7c3aed" opacity="0.75"><animate attributeName="r" values="5.5;7.5;5.5" dur="2.6s" repeatCount="indefinite"/></circle>
+          <circle cx="218" cy="122" r="5.5" fill="#2563eb" opacity="0.75"><animate attributeName="r" values="5.5;7.5;5.5" dur="2.2s" begin="0.4s" repeatCount="indefinite"/></circle>
+          <circle cx="140" cy="162" r="4.5" fill="#7c3aed" opacity="0.6"><animate attributeName="r" values="4.5;6.5;4.5" dur="3.1s" begin="0.3s" repeatCount="indefinite"/></circle>
+          <circle cx="232" cy="162" r="4.5" fill="#2563eb" opacity="0.6"><animate attributeName="r" values="4.5;6.5;4.5" dur="2.7s" begin="0.7s" repeatCount="indefinite"/></circle>
+          <circle cx="160" cy="200" r="4.5" fill="#0d9488" opacity="0.65"><animate attributeName="r" values="4.5;6.5;4.5" dur="2.4s" begin="0.2s" repeatCount="indefinite"/></circle>
+          <circle cx="210" cy="200" r="4.5" fill="#0d9488" opacity="0.65"><animate attributeName="r" values="4.5;6.5;4.5" dur="2.9s" begin="0.9s" repeatCount="indefinite"/></circle>
+          <!-- synapse lines -->
+          <line x1="152" y1="122" x2="140" y2="162" stroke="#7c3aed" stroke-width="1" opacity="0.35"/>
+          <line x1="152" y1="122" x2="160" y2="200" stroke="#7c3aed" stroke-width="1" opacity="0.25"/>
+          <line x1="218" y1="122" x2="232" y2="162" stroke="#2563eb" stroke-width="1" opacity="0.35"/>
+          <line x1="218" y1="122" x2="210" y2="200" stroke="#2563eb" stroke-width="1" opacity="0.25"/>
+          <line x1="140" y1="162" x2="160" y2="200" stroke="#0d9488" stroke-width="1" opacity="0.35"/>
+          <line x1="232" y1="162" x2="210" y2="200" stroke="#0d9488" stroke-width="1" opacity="0.35"/>
+          <!-- signal pulses -->
+          <circle r="3.5" fill="#7c3aed" opacity="0.9"><animateMotion path="M152,122 L140,162" dur="2s" repeatCount="indefinite"/></circle>
+          <circle r="3.5" fill="#2563eb" opacity="0.9"><animateMotion path="M218,122 L232,162" dur="2.5s" begin="0.5s" repeatCount="indefinite"/></circle>
+          <circle r="3.5" fill="#0d9488" opacity="0.9"><animateMotion path="M140,162 L160,200" dur="1.9s" begin="1s" repeatCount="indefinite"/></circle>
+          <circle r="3.5" fill="#7c3aed" opacity="0.9"><animateMotion path="M232,162 L210,200" dur="2.2s" begin="0.3s" repeatCount="indefinite"/></circle>
+
+          <!-- connector from brain to phone -->
+          <line x1="185" y1="232" x2="185" y2="268" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <circle cx="185" cy="250" r="3" fill="#a5b4fc" opacity="0.7"><animate attributeName="cy" values="234;266;234" dur="2s" repeatCount="indefinite"/></circle>
+
+          <!-- Phone mockup -->
+          <rect x="137" y="268" width="96" height="168" rx="16" fill="#0f1f3d" stroke="#1e3a6e" stroke-width="2"/>
+          <rect x="145" y="282" width="80" height="144" rx="10" fill="#0d1117"/>
+          <rect x="162" y="273" width="42" height="10" rx="5" fill="#0a1628"/>
+          <!-- screen cards -->
+          <rect x="150" y="290" width="70" height="14" rx="4" fill="#1a2744"/>
+          <rect x="150" y="308" width="70" height="14" rx="4" fill="#1a2744"/>
+          <rect x="150" y="326" width="70" height="14" rx="4" fill="#1a2744"/>
+          <rect x="150" y="348" width="70" height="34" rx="8" fill="#2563eb"/>
+          <text x="185" y="369" text-anchor="middle" font-size="9" fill="white" font-weight="800" font-family="sans-serif">Flutter App</text>
+          <!-- screen text details -->
+          <rect x="153" y="293" width="40" height="5" rx="2" fill="#60a5fa" opacity="0.5"/>
+          <rect x="153" y="311" width="35" height="5" rx="2" fill="#34d399" opacity="0.5"/>
+          <rect x="153" y="329" width="38" height="5" rx="2" fill="#a78bfa" opacity="0.5"/>
+          <!-- home bar -->
+          <rect x="165" y="400" width="40" height="3" rx="2" fill="#374151"/>
+
+          <!-- Floating tech labels -->
+          <rect x="30" y="300" width="72" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="66" y="318" text-anchor="middle" font-size="9.5" fill="#5b21b6" font-weight="800" font-family="sans-serif">PyTorch</text>
+          <line x1="102" y1="314" x2="137" y2="340" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <rect x="268" y="300" width="72" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="304" y="318" text-anchor="middle" font-size="9.5" fill="#1e40af" font-weight="800" font-family="sans-serif">Firebase</text>
+          <line x1="268" y1="314" x2="233" y2="340" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <rect x="38" y="352" width="72" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="74" y="370" text-anchor="middle" font-size="9.5" fill="#065f46" font-weight="800" font-family="sans-serif">FastAPI</text>
+          <line x1="110" y1="366" x2="137" y2="370" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <rect x="262" y="352" width="74" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="299" y="370" text-anchor="middle" font-size="9.5" fill="#7c3aed" font-weight="800" font-family="sans-serif">OpenCV</text>
+          <line x1="262" y1="366" x2="233" y2="370" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <rect x="50" y="412" width="70" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="85" y="430" text-anchor="middle" font-size="9.5" fill="#92400e" font-weight="800" font-family="sans-serif">Django</text>
+          <line x1="120" y1="420" x2="137" y2="415" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <rect x="252" y="412" width="70" height="28" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
+          <text x="287" y="430" text-anchor="middle" font-size="9.5" fill="#065f46" font-weight="800" font-family="sans-serif">Supabase</text>
+          <line x1="252" y1="420" x2="233" y2="415" stroke="#c7d2fe" stroke-width="1" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="sk-sec">
+  <div class="container">
+    <div class="rv"><div class="slbl">Technical skills</div><h2 class="stitle">Full-stack across four domains</h2><p class="ssub">A production-tested toolkit spanning mobile, AI/ML, backend, and tooling.</p></div>
+    <div class="sk-grid stg">
+      <div class="sg ai"><div class="sg-t">AI / ML</div><div class="sp-list"><span class="sp">PyTorch</span><span class="sp">OpenCV</span><span class="sp">Computer Vision</span><span class="sp">NLP</span><span class="sp">Transformers</span><span class="sp">Dialogflow</span></div></div>
+      <div class="sg mob"><div class="sg-t">Mobile</div><div class="sp-list"><span class="sp">Flutter</span><span class="sp">Dart</span><span class="sp">Firebase Auth</span><span class="sp">Firestore</span><span class="sp">Provider</span><span class="sp">Riverpod</span></div></div>
+      <div class="sg be"><div class="sg-t">Backend</div><div class="sp-list"><span class="sp">FastAPI</span><span class="sp">Django</span><span class="sp">Flask</span><span class="sp">REST APIs</span><span class="sp">Supabase</span><span class="sp">SQLite</span></div></div>
+      <div class="sg lang"><div class="sg-t">Languages</div><div class="sp-list"><span class="sp">Python</span><span class="sp">Dart</span><span class="sp">JavaScript</span><span class="sp">C++</span></div></div>
+      <div class="sg tools"><div class="sg-t">Tools &amp; Cloud</div><div class="sp-list"><span class="sp">Git</span><span class="sp">Docker</span><span class="sp">Postman</span><span class="sp">Figma</span><span class="sp">Google Cloud</span></div></div>
+    </div>
+    <div class="bars" id="skillBars">
+      <div class="bi"><div class="bi-lbl"><span>Flutter / Dart</span><span>88%</span></div><div class="bt"><div class="bf fb" data-w="88"></div></div></div>
+      <div class="bi"><div class="bi-lbl"><span>PyTorch / Computer Vision</span><span>78%</span></div><div class="bt"><div class="bf fp" data-w="78"></div></div></div>
+      <div class="bi"><div class="bi-lbl"><span>Python</span><span>85%</span></div><div class="bt"><div class="bf ft" data-w="85"></div></div></div>
+      <div class="bi"><div class="bi-lbl"><span>FastAPI / Django</span><span>80%</span></div><div class="bt"><div class="bf fa" data-w="80"></div></div></div>
+      <div class="bi"><div class="bi-lbl"><span>Firebase / Firestore</span><span>83%</span></div><div class="bt"><div class="bf fb" data-w="83"></div></div></div>
+      <div class="bi"><div class="bi-lbl"><span>OpenCV / NLP</span><span>72%</span></div><div class="bt"><div class="bf fp" data-w="72"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="rv"><div class="slbl">Projects</div><h2 class="stitle">13 shipped projects</h2><p class="ssub">From AI-powered systems to full-stack mobile apps — each one built to solve a real problem.</p></div>
+    <div class="fb-bar">
+      <button class="fb-btn act" onclick="fp('all',this)">All</button>
+      <button class="fb-btn" onclick="fp('ai',this)">AI / ML</button>
+      <button class="fb-btn" onclick="fp('mobile',this)">Mobile</button>
+      <button class="fb-btn" onclick="fp('backend',this)">Backend</button>
+      <button class="fb-btn" onclick="fp('python',this)">Python</button>
+    </div>
+    <div class="pg" id="pg">
+      <div class="pc fb rvsc" data-cat="ai" style="transition-delay:0s"><div class="ph2"><div class="pi" style="background:#ede9fe;">🎯</div><div class="pl"><a href="https://github.com/Soham801/AI-cheat-detector" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">AI Cheat Detection System</div><p class="pd">Real-time classroom proctoring using PyTorch + OpenCV. Detects suspicious gaze and body movement patterns. Lightweight inference — no GPU required.</p><div class="ptags"><span class="tg tai">AI / ML</span><span class="tg tai">Computer Vision</span><span class="tg tpy">PyTorch</span><span class="tg tpy">OpenCV</span></div></div></div>
+      <div class="pc ft rvsc" data-cat="backend" style="transition-delay:0.07s"><div class="ph2"><div class="pi" style="background:#d1fae5;">🌾</div><div class="pl"><a href="https://github.com/Soham801/Krushi-Sahayak" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Krushi Sahayak</div><p class="pd">Hackathon-winning farmer advisory portal built in &lt;24 hours. Django REST API delivering crop guidance and welfare scheme info. Recognized by judges for real-world impact.</p><div class="ptags"><span class="tg tba">Django</span><span class="tg tba">REST API</span><span class="tg tpy">Python</span></div></div></div>
+      <div class="pc fp rvsc" data-cat="mobile ai" style="transition-delay:0.14s"><div class="ph2"><div class="pi" style="background:#dbeafe;">💬</div><div class="pl"><a href="https://github.com/Soham801/Flutter-Chatbot" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Flutter AI Chatbot</div><p class="pd">End-to-end mobile AI assistant integrating Dialogflow NLP with Flutter frontend and Google Cloud Console. Full conversational flow, mobile-native UX.</p><div class="ptags"><span class="tg tmob">Flutter</span><span class="tg tai">Dialogflow</span><span class="tg tba">Google Cloud</span></div></div></div>
+      <div class="pc rvsc" data-cat="ai backend" style="transition-delay:0.21s"><div class="ph2"><div class="pi" style="background:#fef3c7;">🔍</div><div class="pl"><a href="https://github.com/Soham801/perplexity-clone" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Perplexity Clone</div><p class="pd">AI-powered search interface replicating Perplexity's conversational search UX. LLM integration, query understanding, and real-time response streaming.</p><div class="ptags"><span class="tg tai">AI / LLM</span><span class="tg tpy">Python</span><span class="tg tba">Backend</span></div></div></div>
+      <div class="pc rvsc" data-cat="ai backend" style="transition-delay:0.28s"><div class="ph2"><div class="pi" style="background:#fce7f3;">🛡️</div><div class="pl"><a href="https://github.com/Soham801/SafeSurf" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">SafeSurf — Cybersecurity Toolkit</div><p class="pd">Cybersecurity awareness platform covering phishing detection, secure browsing practices, and threat visualization.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tred">Security</span><span class="tg tba">Backend</span></div></div></div>
+      <div class="pc rvsc" data-cat="mobile" style="transition-delay:0.35s"><div class="ph2"><div class="pi" style="background:#dbeafe;">🛒</div><div class="pl"><a href="https://github.com/Soham801/Blinkit_UI_Clone" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Blinkit UI Clone</div><p class="pd">Pixel-perfect Flutter recreation of Blinkit's mobile UI. Advanced layout, custom widgets, and navigation patterns from production commerce apps.</p><div class="ptags"><span class="tg tmob">Flutter</span><span class="tg tmob">Dart</span><span class="tg tmob">UI/UX</span></div></div></div>
+      <div class="pc rvsc" data-cat="mobile" style="transition-delay:0.42s"><div class="ph2"><div class="pi" style="background:#e0f2fe;">🧩</div><div class="pl"><a href="https://github.com/Soham801/Flutter_Widgets" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Flutter Widget Library</div><p class="pd">A curated collection of reusable, well-documented Flutter widgets. A personal component library to accelerate development across projects.</p><div class="ptags"><span class="tg tmob">Flutter</span><span class="tg tmob">Dart</span><span class="tg tmob">Components</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.49s"><div class="ph2"><div class="pi" style="background:#f3e8ff;">🤖</div><div class="pl"><a href="https://github.com/Soham801/Discord-bot" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Discord Automation Bot</div><p class="pd">Python bot automating server moderation, scheduled messaging, and workflow triggers — cutting manual admin overhead for active communities.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tpy">Automation</span><span class="tg tba">Discord API</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.56s"><div class="ph2"><div class="pi" style="background:#fef9c3;">🎵</div><div class="pl"><a href="https://github.com/Soham801/Python-Music-Player" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Python Music Player</div><p class="pd">Desktop music player with playlist management and automated playback control. Event-driven architecture with Python GUI libraries.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tpy">GUI</span><span class="tg tpy">Automation</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.63s"><div class="ph2"><div class="pi" style="background:#d1fae5;">☕</div><div class="pl"><a href="https://github.com/Soham801/Python-Projects/blob/main/CafeManagement.py" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Cafe Management System</div><p class="pd">Python-based POS and order management — menu management, billing, and order tracking in a clean CLI interface.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tba">Management</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.7s"><div class="ph2"><div class="pi" style="background:#fce7f3;">💬</div><div class="pl"><a href="https://github.com/Soham801/Python-Projects/blob/main/WhatsappAutomation.py" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">WhatsApp Automation Tool</div><p class="pd">Python automation for scheduled WhatsApp message delivery — system-level API integration and practical automation engineering.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tpy">Automation</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.77s"><div class="ph2"><div class="pi" style="background:#f0fdf4;">✂️</div><div class="pl"><a href="https://github.com/Soham801/Python-Projects/blob/main/RockPaperScissorGAME.py" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Rock Paper Scissors Game</div><p class="pd">Interactive Python game with clean game-state logic, score tracking, and replay functionality.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tpy">Game Logic</span></div></div></div>
+      <div class="pc rvsc" data-cat="python" style="transition-delay:0.84s"><div class="ph2"><div class="pi" style="background:#fffbeb;">🏠</div><div class="pl"><a href="https://github.com/Soham801/Python-Projects/blob/main/RentCalculator.py" target="_blank" class="ib" title="GitHub"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="pb"><div class="pt">Rent Calculator</div><p class="pd">Python utility for rental cost calculation with split-bill logic, tax computation, and deposit breakdown.</p><div class="ptags"><span class="tg tpy">Python</span><span class="tg tpy">Utility</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HACKATHONS -->
+<section id="hackathons" class="hk-sec">
+  <div class="container">
+    <div class="rv"><div class="slbl">Competitive record</div><h2 class="stitle">Proven under pressure</h2><p class="ssub">Selected, evaluated, and recognized at national and city-level hackathons.</p></div>
+    <div class="hk-list">
+      <div class="hk rv"><div class="hkb" style="background:#ede9fe;">🏆</div><div><div class="hke">VJ Hackathon — Smart Innovations 5th Edition</div><div class="hkm">National 24-Hour Hackathon · VNRVJIET, Hyderabad · 2025</div><div class="hko">Selected among Top 32 teams nationwide from 5,000+ participants. Built, tested, and pitched a functional technical prototype in 24 hours. Evaluated by industry experts on technical rigor, innovation, and real-world scalability.</div></div><div class="hks"><div class="hksn">Top 32</div><div class="hksl">of 5,000+ · Top 0.64%</div></div></div>
+      <div class="hk rv"><div class="hkb" style="background:#d1fae5;">🌾</div><div><div class="hke">InnovateYou 24-Hour Hackathon</div><div class="hkm">Pune · February 2025</div><div class="hko">Led a 3-member team to design and ship Krushi Sahayak — a farmer welfare advisory platform — from zero to demo-ready in under 24 hours. Recognized by judges for societal impact and technical execution.</div></div><div class="hks"><div class="hksn">&lt;24h</div><div class="hksl">zero → demo, team lead</div></div></div>
+      <div class="hk rv"><div class="hkb" style="background:#dbeafe;">🔵</div><div><div class="hke">Google Developer Group Workshop</div><div class="hkm">Hyderabad · March 2025</div><div class="hko">Hands-on sessions on Android development, AI/ML integration, and Google Cloud by industry engineers. Deepened mobile-AI convergence skills directly relevant to production engineering.</div></div><div class="hks"><div class="hksn">GDG</div><div class="hksl">Google · AI + Cloud</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="rv"><div class="slbl">Experience</div><h2 class="stitle">Professional work</h2><p class="ssub">Production-environment experience building real apps for real users.</p></div>
+    <div class="ec rv"><div class="eh"><div><div class="er">Flutter Developer Intern</div><div class="eco">MeMatdar Developers</div></div><div class="ed">Oct 2025 – Jan 2026</div></div><ul class="ebl"><li>Architected and shipped production-grade Flutter mobile apps using Clean Architecture, ensuring maintainability across a multi-developer codebase.</li><li>Engineered optimized Firebase Firestore pipelines with offline-first state management using Provider and Riverpod, reducing real-time sync latency.</li><li>Cut crash rates through systematic debugging and code-optimization passes, raising app stability ahead of each release cycle.</li><li>Delivered features faster in Agile sprints through cross-functional collaboration and clean, reviewable PRs — reducing review-to-merge time.</li></ul></div>
+    <div class="edcard rv"><div style="font-size:2.4rem;flex-shrink:0;">🎓</div><div><div class="edeg">B.Sc. (Hons.) Computer Science</div><div class="esch">Dr. G.Y. Pathrikar College of CS &amp; IT, MGM University, Aurangabad, Maharashtra</div></div><div class="eyr">2023 – 2027</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="ct-sec">
+  <div class="container">
+    <div class="rv"><div class="slbl">Get in touch</div><h2 class="stitle">Let's build something</h2><p class="ssub">Open to internships, collaborations, and full-time roles in mobile engineering and AI/ML.</p></div>
+    <div class="ct-grid">
+      <div class="stg">
+        <a href="mailto:sohamdeshmukh801@gmail.com" class="cc"><div class="ci">✉️</div><div><div class="clbl">Email</div><div class="cval">sohamdeshmukh801@gmail.com</div></div></a>
+        <a href="tel:+919511711961" class="cc"><div class="ci">📞</div><div><div class="clbl">Phone</div><div class="cval">+91-9511711961</div></div></a>
+        <a href="https://github.com/Soham801" target="_blank" class="cc"><div class="ci"><svg width="20" height="20" fill="#94a3b8" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div><div><div class="clbl">GitHub</div><div class="cval">github.com/Soham801</div></div></a>
+        <a href="https://www.linkedin.com/in/soham-deshmukh-95aa76288/" target="_blank" class="cc"><div class="ci"><svg width="20" height="20" fill="#94a3b8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="clbl">LinkedIn</div><div class="cval">linkedin.com/in/soham-deshmukh</div></div></a>
+      </div>
+      <div class="avc rvr"><p>Ready to contribute from day one.</p><p>Whether it's a Flutter feature, a Python ML pipeline, or a product problem that needs solving fast — I bring the technical range and urgency to deliver.</p><div class="av-tags"><span class="avt avbl">Open to internships</span><span class="avt avtl">Remote friendly</span><span class="avt avpu">Full-time roles</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>Built by <span>Soham Deshmukh</span> · Mobile &amp; AI/ML Engineer · Aurangabad, India</footer>
+
+<script>
+/* PARTICLES */
+(function(){
+  const c=document.getElementById('particles'),ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function sz(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  sz();window.addEventListener('resize',sz);
+  for(let i=0;i<60;i++)pts.push({x:Math.random()*1800,y:Math.random()*1400,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.8+.8});
+  (function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>1800)p.vx*=-1;if(p.y<0||p.y>1400)p.vy*=-1;
+      ctx.beginPath();ctx.arc(p.x*W/1800,p.y*H/1400,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(37,99,235,0.18)';ctx.fill();
+    });
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],dx=(a.x-b.x)*W/1800,dy=(a.y-b.y)*H/1400,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){ctx.beginPath();ctx.moveTo(a.x*W/1800,a.y*H/1400);ctx.lineTo(b.x*W/1800,b.y*H/1400);ctx.strokeStyle=`rgba(37,99,235,${.06*(1-d/130)})`;ctx.lineWidth=.6;ctx.stroke();}
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+
+/* NEURAL NETWORK */
+(function(){
+  const c=document.getElementById('neuralCanvas');if(!c)return;
+  const ctx=c.getContext('2d'),W=430,H=430;c.width=W;c.height=H;
+  const layers=[[4,55],[5,155],[4,260],[3,358]];
+  const nodes=[];
+  layers.forEach(([n,x])=>{
+    const sp=(H-80)/(n>1?n-1:1);
+    for(let i=0;i<n;i++)nodes.push({x,y:n===1?H/2:40+i*sp,pulse:0});
+  });
+  const conns=[];let li=0;
+  layers.forEach(([n],idx)=>{
+    if(idx<layers.length-1){const nn=layers[idx+1][0];
+      for(let a=0;a<n;a++)for(let b=0;b<nn;b++)conns.push({from:li+a,to:li+n+b,t:0,active:false,spd:.013+Math.random()*.009});
+      li+=n;}
+  });
+  let tick=0;
+  (function draw(){
+    ctx.clearRect(0,0,W,H);
+    const cols=['rgba(37,99,235,','rgba(124,58,237,','rgba(13,148,136,','rgba(37,99,235,'];
+    conns.forEach(co=>{
+      const f=nodes[co.from],t=nodes[co.to];
+      ctx.beginPath();ctx.moveTo(f.x,f.y);ctx.lineTo(t.x,t.y);
+      ctx.strokeStyle='rgba(59,130,246,0.1)';ctx.lineWidth=0.9;ctx.stroke();
+      if(co.active){
+        co.t+=co.spd;if(co.t>1){co.t=0;co.active=false;nodes[co.to].pulse=1;}
+        const px=f.x+(t.x-f.x)*co.t,py=f.y+(t.y-f.y)*co.t;
+        ctx.beginPath();ctx.arc(px,py,3.5,0,Math.PI*2);ctx.fillStyle='rgba(124,58,237,0.9)';ctx.fill();
+        const g=ctx.createRadialGradient(px,py,0,px,py,10);g.addColorStop(0,'rgba(124,58,237,0.3)');g.addColorStop(1,'rgba(124,58,237,0)');
+        ctx.beginPath();ctx.arc(px,py,10,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      }
+    });
+    nodes.forEach((n,i)=>{
+      if(n.pulse>0)n.pulse-=.035;if(n.pulse<0)n.pulse=0;
+      const r=7.5+n.pulse*5,col=cols[i%4];
+      ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);ctx.fillStyle=col+'0.14)';ctx.fill();
+      ctx.strokeStyle=col+'0.75)';ctx.lineWidth=1.8;ctx.stroke();
+      if(n.pulse>0){ctx.beginPath();ctx.arc(n.x,n.y,r+n.pulse*7,0,Math.PI*2);ctx.strokeStyle=col+(n.pulse*.45)+')';ctx.lineWidth=0.6;ctx.stroke();}
+    });
+    tick++;if(tick%38===0){
+      const sl=nodes.filter(n=>n.x===55);const sn=sl[Math.floor(Math.random()*sl.length)];
+      if(sn){sn.pulse=1;const si=nodes.indexOf(sn);conns.filter(co=>co.from===si).forEach(co=>{co.active=true;co.t=0;});}
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+
+/* NAV */
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20));
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv,.rvl,.rvr,.rvsc,.stg').forEach(el=>obs.observe(el));
+
+/* SKILL BARS */
+const bobs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bf').forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%';},80);});bobs.unobserve(e.target);}});},{threshold:0.15});
+const bs=document.getElementById('skillBars');if(bs)bobs.observe(bs);
+
+/* FILTER */
+function fp(cat,btn){
+  document.querySelectorAll('.fb-btn').forEach(b=>b.classList.remove('act'));btn.classList.add('act');
+  document.querySelectorAll('.pc').forEach(card=>{const cats=card.getAttribute('data-cat')||'';card.style.display=(cat==='all'||cats.includes(cat))?'':'none';});
+}
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});}));
+</script>
+</body>
+</html>
